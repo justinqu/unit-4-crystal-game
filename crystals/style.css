@@ -1,0 +1,27 @@
+.crystals {
+    height: 150px;
+    width: 150px;
+
+}
+
+header{
+    text-align: center;
+    border-color:black;
+    border-width: 20%;
+}    
+
+.jumbotronjumbotron-fluid{
+    text-align: center
+
+
+}
+
+.main-container{
+    width: 200px;
+    height:300px ;
+    margin: 0px,0px,0px,50px;
+    width: 50%;
+    padding: 10px;
+    color: green;
+    background-color: peachpuff;
+    }
