@@ -24,10 +24,9 @@ header{
 .main-container{
     font-size: 20px;
     height:300px ;
-  margin-left: 25%;
+    margin-left: 25%;
     width: 50%;
     padding: 10px;
-    color: green;
     background-color: peachpuff;
     
     }
@@ -36,20 +35,19 @@ header{
     background-color: peachpuff;
     width: 90px;
     height: auto;
-    margin-left: 45%;
+    margin-left: 46.5%;
 
 }
 #lost{ 
     background-color: peachpuff;
     width: 90px;
-    height: auto;
-    margin-left: 45%;
+    margin-left: 46.5%;
 
 }
 #score{ 
     background-color: peachpuff;
     width: 130px;
-    height: auto;
+
     margin-left: 45%;
 
 }
@@ -57,12 +55,11 @@ header{
 .result{ 
     background-color: peachpuff;
     width: 130px;
-    height: auto;
     margin-bottom: 30px;
     margin-left: 45%;
 
 }
-#crystals-container{
+.crystals-container{
     margin-left: 28%; 
 
 }
