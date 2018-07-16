@@ -15,8 +15,7 @@ var random_number = 0;
 var lost = 0;
 var win = 0; 
 
-function ResetGlobalVariables(){
-   makeCrystals()
+
 
 var startGame = function(){
 // create a random number to start the game
@@ -24,9 +23,26 @@ var startGame = function(){
  $(".result").html('Random Number: ' + random_number);
  
 
-
 //creates a random value for each Crystal
 }
+
+
+
+
+var reset = function (){
+    $("img").append("");
+    for (var i = 0; i < 4; i++){
+        var randomNum = Math.floor(Math.random() * 12) + 1;
+        $(".crystals-container").html(
+            "<img class='crystal crystals' value="+randomNum+"  src=" + crystals[i] + ">"
+        )}
+
+        $('#score').html("Current Score: " +score);  
+        $(".crystals-container").empty(); 
+    makeCrystals() 
+};
+
+makeCrystals();
 
 function makeCrystals() { 
    
@@ -37,28 +53,30 @@ function makeCrystals() {
         )}}
 
         $('#score').html("Current Score: " +score);   
-    makeCrystals()  
+
     startGame(); 
 
-$(document).on("click", ".crystal", function(){
-    console.log($(this).attr("value"));
-    var crystalValue = parseInt($(this).attr("value"))
-    score += crystalValue
-    $('#score').html("Current Score: " +score);
 
-    if (score === random_number){
-        win++;
-        $("#win").html("Wins: " + win);
-        score = 0;
-        startGame();
-    }
-
-    else if(score > random_number){
-        lost++;
-        $("#lost").html("Losess: " +lost);
-        score = 0;
-        startGame();
-    } 
+    $(document).on("click", ".crystal", function(){
+        console.log($(this).attr("value"));
+        var crystalValue = parseInt($(this).attr("value"))
+        score += crystalValue
+        $('#score').html("Current Score: " +score);
     
-  
-})});
+        if (score === random_number){
+            win++;
+            $("#win").html("Wins: " + win);
+            score = 0;
+            reset();
+            startGame();
+        }
+    
+        else if(score > random_number){
+            lost++;
+            $("#lost").html("Losess: " +lost);
+            score = 0;
+            reset();
+            startGame();
+        } 
+    }
+)});
