@@ -15,12 +15,18 @@ var random_number = 0;
 var lost = 0;
 var win = 0; 
 
+function ResetGlobalVariables(){
+   makeCrystals()
+
 var startGame = function(){
 // create a random number to start the game
  random_number = Math.floor(Math.random() * 69 ) + 30;
  $(".result").html('Random Number: ' + random_number);
+ 
+
 
 //creates a random value for each Crystal
+}
 
 function makeCrystals() { 
    
@@ -30,13 +36,9 @@ function makeCrystals() {
             "<img class='crystal crystals' value="+randomNum+"  src=" + crystals[i] + ">"
         )}}
 
-        $('#score').html("Current Score: " +score);
-       
-        makeCrystals() 
-    }
-    
-    startGame();
-    
+        $('#score').html("Current Score: " +score);   
+    makeCrystals()  
+    startGame(); 
 
 $(document).on("click", ".crystal", function(){
     console.log($(this).attr("value"));
@@ -48,7 +50,6 @@ $(document).on("click", ".crystal", function(){
         win++;
         $("#win").html("Wins: " + win);
         score = 0;
-
         startGame();
     }
 
@@ -56,7 +57,6 @@ $(document).on("click", ".crystal", function(){
         lost++;
         $("#lost").html("Losess: " +lost);
         score = 0;
-
         startGame();
     } 
     
